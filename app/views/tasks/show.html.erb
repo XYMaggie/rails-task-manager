@@ -1,0 +1,15 @@
+
+<h1 class = "show"><%=@task.title%></h1>
+<%= link_to "edit",edit_path(:id => @task.id)%>
+
+
+<div class="content">
+<p id="card"><%=@task.details%></p>
+</div>
+
+<p>This task is
+ <%= @task.completed == true ? 'done' : 'ongoing' %>
+</p>
+
+<%=link_to"Go back to tasks page", home_path%>
+

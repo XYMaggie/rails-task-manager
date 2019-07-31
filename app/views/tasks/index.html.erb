@@ -1,0 +1,26 @@
+<div class = "card">
+
+<h1>Zoe's list🤓</h1>
+<ul >
+  <%@tasks.each do|task|%>
+  <li class = "words text-decoration-none">[<%=task.completed == true ? "V" : "  " %>]<%=link_to task.title, task_path(task),class:"text" %>
+   <span>
+    <%= link_to "Delete", task_path(id: task.id),
+        method: :delete,
+        data: { confirm: "Are you sure you want to delete it?" },
+        class: "trash"
+        %>
+
+   </span>
+
+  </li>
+
+  <%end%>
+  <a href="/tasks/new" class="btn btn-primary">Create task</a>
+</div>
+<!--
+   <button type="button"class="btn btn-primary text-white "><%=link_to "Create task", new_path %></button> -->
+
+
+<!-- <a href="/tasks/:id'" method:delete, data:{comfirm:"Are you sure?"}><i class="far fa-trash-alt"></i></a>
+ -->
